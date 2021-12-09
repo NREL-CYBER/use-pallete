@@ -1,0 +1,25 @@
+{
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "tests/**/*"
+    ],
+    "compilerOptions": {
+        "jsx": "react",
+        "declaration": true,
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "target": "es6",
+        "lib": [
+            "ESNext"
+        ],
+        "esModuleInterop": true,
+        "strict": true,
+        "sourceMap": true,
+        "noEmitOnError": true,
+        "baseUrl": ".",
+        "resolveJsonModule": true,
+        "outDir": "dist"
+    },
+}

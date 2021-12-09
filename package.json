@@ -1,0 +1,65 @@
+{
+  "name": "use-pallete",
+  "version": "0.0.1",
+  "private": true,
+  "main": "dist/use-pallete.js",
+  "types": "dist/use-pallete.d.ts",
+  "dependencies": {
+    "@babel/preset-flow": "^7.16.0",
+    "immer": "^9.0.6",
+    "store": "https://github.com/NREL-CYBER/store",
+    "zustand": "^3.6.6"
+  },
+  "scripts": {
+    "build": "tsc --emitDeclarationOnly --noEmit false && babel src --out-dir dist --extensions .ts,.tsx",
+    "update": "yarn install && yarn add https://github.com/NREL-CYBER/store",
+    "docs": "typedoc --out docs src/entry.ts"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "config": {
+    "ionic_bundler": "webpack",
+    "ionic_webpack": "./config/webpack.config.js"
+  },
+  "resolutions": {
+    "ws": "7.4.6",
+    "normalize-url": "4.5.1",
+    "axios": "0.21.2",
+    "immer": "9.0.6",
+    "tar": "6.1.9"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/jest": "^26.0.19",
+    "babel-loader": "^8.2.2",
+    "typescript": "^4.2.3"
+  },
+  "description": "Use Pallete Hook",
+  "babel": {
+    "plugins": [
+      "@babel/plugin-proposal-optional-chaining"
+    ],
+    "presets": [
+      "@babel/preset-flow",
+      "@babel/preset-react"
+    ]
+  }
+}
