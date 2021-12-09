@@ -1,0 +1,197 @@
+{
+    "$id": "pallete",
+    "title": "Pallete",
+    "type": "object",
+    "definitions": {
+        "trait_identifier": {
+            "$id": "#/definitions/trait_identifier",
+            "type": "string",
+            "enum": [
+                "error-inject-types"
+            ]
+        },
+        "pallete_type": {
+            "$id": "#/definitions/pallete_type",
+            "type": "string",
+            "enum": [
+                "error-inject-types"
+            ]
+        },
+        "trait_definition": {
+            "$id": "#/definitions/trait_definition",
+            "type": "object",
+            "title": "Trait Information",
+            "properties": {
+                "name": {
+                    "title": "Name",
+                    "type": "string",
+                    "pattern": "^[a-z+-]*"
+                },
+                "options": {
+                    "title": "Must adhere to these",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "name"
+            ]
+        },
+        "property_definition": {
+            "$id": "#/definitions/property_definition",
+            "type": "object",
+            "title": "Property Information",
+            "properties": {
+                "name": {
+                    "title": "Name",
+                    "type": "string",
+                    "pattern": "^[a-z+-]*"
+                },
+                "type": {
+                    "title": "Property Type",
+                    "type": "string",
+                    "enum": [
+                        "string",
+                        "number",
+                        "uri",
+                        "date"
+                    ]
+                },
+                "min": {
+                    "type": "integer"
+                },
+                "max": {
+                    "type": "integer"
+                },
+                "enum": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "identifier",
+                "type"
+            ]
+        },
+        "pallete_node": {
+            "$id": "#/definitions/pallete_node",
+            "type": "object",
+            "title": "Pallet Element Node type",
+            "description": "Color coding element for a node",
+            "properties": {
+                "name": {
+                    "title": "Name",
+                    "type": "string",
+                    "pattern": "^[a-z+-]*"
+                },
+                "type": {
+                    "title": "Type",
+                    "type": "string",
+                    "enum": [
+                        "node"
+                    ]
+                },
+                "trait_definitions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/trait_identifier"
+                    }
+                },
+                "r": {
+                    "title": "red",
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "g": {
+                    "title": "green",
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "b": {
+                    "title": "blue",
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                }
+            },
+            "required": [
+                "name",
+                "type",
+                "r",
+                "g",
+                "b"
+            ]
+        },
+        "pallete_relationship": {
+            "$id": "#/definitions/pallete_relationship",
+            "type": "object",
+            "title": "Pallet Element Relationship",
+            "description": "Color coding element for a relationship",
+            "properties": {
+                "name": {
+                    "title": "Name",
+                    "type": "string",
+                    "pattern": "^[a-z+-]*"
+                },
+                "type": {
+                    "title": "Type",
+                    "type": "string",
+                    "enum": [
+                        "relationship"
+                    ]
+                },
+                "trait_definitions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/trait_identifier"
+                    }
+                },
+                "source_types": {
+                    "title": "Allowed Source Types",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/pallete_type"
+                    }
+                },
+                "target_types": {
+                    "title": "Allowed Target Types",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/pallete_type"
+                    }
+                },
+                "r": {
+                    "title": "red",
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "g": {
+                    "title": "green",
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "b": {
+                    "title": "blue",
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                }
+            },
+            "required": [
+                "name",
+                "type",
+                "r",
+                "g",
+                "b"
+            ]
+        }
+    }
+}
