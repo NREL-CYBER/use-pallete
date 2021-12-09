@@ -1,5 +1,5 @@
 import { composeStore } from "store";
-import { nodeSchema } from "./schema/node.schema";
+import nodeSchema from "./schema/node.schema.json";
 import palletSchema from "./schema/pallete.schema.json";
 export { palletSchema };
 export const toCSSColor = ({
@@ -124,7 +124,7 @@ export const defaultStixNodesPallete = {
     "b": 1
   }
 };
-export const useRigNodeSchema = composeStore < PalleteNodeType > {
+export const useNodeSchema = composeStore < PalleteNodeType > {
   schema: nodeSchema,
   definition: "node",
   identifier: "id"

@@ -149,7 +149,7 @@ export declare const defaultStixNodesPallete: {
         b: number;
     };
 };
-export declare const useRigNodeSchema: import("zustand").UseStore<import("store").Store<PalleteNodeType>, import("zustand").StoreApi<import("store").Store<PalleteNodeType>>>;
+export declare const useNodeSchema: import("zustand").UseStore<import("store").Store<PalleteNodeType>, import("zustand").StoreApi<import("store").Store<PalleteNodeType>>>;
 export declare const useNodeTypes: import("zustand").UseStore<import("store").Store<PalleteNodeType>, import("zustand").StoreApi<import("store").Store<PalleteNodeType>>>;
 export declare const useRelationshipTypes: import("zustand").UseStore<import("store").Store<PalleteRelationshipType>, import("zustand").StoreApi<import("store").Store<PalleteRelationshipType>>>;
 export declare const useTraits: import("zustand").UseStore<import("store").Store<TraitDefinition>, import("zustand").StoreApi<import("store").Store<TraitDefinition>>>;
